@@ -1,0 +1,8 @@
+{
+  "vars": {},
+  "css": [
+    "modals.less"
+  ],
+  "js": [],
+  "customizerUrl": "http://getbootstrap.com/customize/?id=51bb0d3b1c8a1c96030a40727b9348a3"
+}
