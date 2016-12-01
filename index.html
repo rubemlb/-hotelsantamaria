@@ -107,19 +107,19 @@
 										<form action="index.html" class="default-form" id="theform" name="theform">
 
 											<span class="arrival calendar">
-												<input  type="text" name="widget_date" id="widget_date" placeholder="Check-in" data-dateformat="m/d/y">
+												<input  type="text" name="datepicker2" id="datepicker2" placeholder="Check-in" data-dateformat="m/d/y">
 												<i class="fa fa-calendar"></i>
 											</span>
 
 											<span class="departure calendar">
-												<input  style="color:white;" type="text" id="widget_date_to" name="widget_date_to" placeholder="Check-out" data-dateformat="m/d/y">
+												<input  style="color:white;" type="text" id="datepicker3" name="datepicker3" placeholder="Check-out" data-dateformat="m/d/y">
 												<i class="fa fa-calendar"></i>
 											</span>
 											
 											 <input type="hidden" name="date_format" value="m/d/Y">
 
 											<span class="submit-btn">
-												<button class="btn btn-transparent" onclick="store()" style="font-family: msuighur; font-size:40px;">Reservar</button>
+												<button class="btn btn-transparent" onclick="store()">Reservar</button>
 											</span>
 										</form>
 										<!--  /Formulario -->
@@ -519,7 +519,30 @@
 
 	</script>
 	
-	
+	<script  type="text/javascript">
+			$("#datePicker2,#arrival_date").datepicker({
+				minDate: 0,
+				onSelect: function(dateText, inst) {
+				   var actualDate = new Date(dateText);
+				   var newDate = new Date(actualDate.getFullYear(), actualDate.getMonth(), actualDate.getDate()+1);
+					$('#datePicker3,#departure_date').datepicker('option', 'minDate', newDate );
+				}
+			});
+			
+			if(document.getElementById("arrival_date").value != ""){
+				var d = document.getElementById("arrival_date").value;
+				var d2 = $("#arrival_date").datepicker('getDate');
+			}else{
+				var d2 = new Date();
+			}
+
+			$("#datePicker3,#departure_date").datepicker({
+				
+				minDate: new Date(d2.getFullYear(), d2.getMonth(), d2.getDate()+1),
+			});
+			
+	</script>
+
 </body>
 
 </html>
