@@ -104,24 +104,35 @@
 									<li class="tab-content active">
 
 										<!--  Formulario -->
-										<form action="index.html" class="default-form" id="theform" name="theform">
-
-											<span class="arrival calendar">
-												<input  type="text" name="datepicker2" id="datepicker2" placeholder="Check-in" data-dateformat="m/d/y">
-												<i class="fa fa-calendar"></i>
-											</span>
-
-											<span class="departure calendar">
-												<input  style="color:white;" type="text" id="datepicker3" name="datepicker3" placeholder="Check-out" data-dateformat="m/d/y">
-												<i class="fa fa-calendar"></i>
-											</span>
-											
-											 <input type="hidden" name="date_format" value="m/d/Y">
-
-											<span class="submit-btn">
-												<button class="btn btn-transparent" onclick="store()">Reservar</button>
-											</span>
-										</form>
+										<form action="booking.html" class="default-form" id="theform" name="theform" method="post">
+												<span class="arrival calendar">
+													<input readonly type="text" name="checkin" id="checkin" placeholder="Check-in" data-dateformat="m/d/y">
+													<i class="fa fa-calendar"></i>
+												</span>
+												<span class="departure calendar">
+													<input readonly type="text" name="checkout" id="checkout" placeholder="Check-out" data-dateformat="m/d/y">
+													<i class="fa fa-calendar"></i>
+												</span>
+												<span class="adults select-box">
+													<select name="adultos" id="adultos" data-placeholder="Adultos" class="form-control">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</span>
+												<span class="children select-box">
+													<select name="quartos" id="quartos" data-placeholder="Quartos" class="form-control">
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+												</span>
+												<span class="submit-btn">
+													<button class="btn btn-transparent" onclick="store()">Reservar</button>
+												</span>
+											</form>
 										<!--  /Formulario -->
 
 									</li>
@@ -519,7 +530,7 @@
 
 	</script>
 	
-	<script  type="text/javascript">
+	<!-- <script  type="text/javascript">
 			$("#datePicker2,#arrival_date").datepicker({
 				minDate: 0,
 				onSelect: function(dateText, inst) {
@@ -541,7 +552,36 @@
 				minDate: new Date(d2.getFullYear(), d2.getMonth(), d2.getDate()+1),
 			});
 			
-	</script>
+	</script> -->
+
+<script>
+		  /* Send sotres the check-in and Check-out values to be use for autocompleting the reservation form on another page*/
+		  function store(){
+			if (typeof(Storage) !== "undefined") {
+				sessionStorage.setItem("clientCki", document.theform.checkin.value);
+				sessionStorage.setItem("clientCko", document.theform.checkout.value);
+				sessionStorage.setItem("clientAdlt", document.theform.adultos.value);
+				sessionStorage.setItem("clientRoom", document.theform.quartos.value);
+			} else {
+				alert("Sorry! No Web Storage support..")
+			}
+		  };
+		</script>
+		
+		<script  type="text/javascript">
+			$("#checkin").datepicker({
+				minDate: 0,
+				onSelect: function(dateText, inst) {
+				   var actualDate = new Date(dateText);
+				   var newDate = new Date(actualDate.getFullYear(), actualDate.getMonth(), actualDate.getDate()+1);
+					$('#checkout').datepicker('option', 'minDate', newDate );
+				}
+			});
+
+			$("#checkout").datepicker({
+				minDate: 1,
+			});
+		</script>
 
 </body>
 

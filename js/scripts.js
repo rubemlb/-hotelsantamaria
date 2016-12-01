@@ -135,7 +135,7 @@ $(document).ready(function () {
   /* -------------------------------------------------------------------------
     DATEPICKER 
   ------------------------------------------------------------------------- */
-  /*$('.calendar').each(function() {
+  $('.calendar').each(function() {
 
     var input = $(this).find('input'),
       dateformat = input.data('dateformat') ? input.data('dateformat') : 'm/d/y',
@@ -161,7 +161,7 @@ $(document).ready(function () {
       input.focus();
     });
 
-  });*/
+  });
 
   /* -------------------------------------------------------------------------
 		HEADER LOGIN
