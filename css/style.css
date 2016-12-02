@@ -138,6 +138,7 @@ input[type="submit"] {
 /*data desactivado*/
 button[disabled], html input[disabled]{
 cursor: not-allowed;
+color: #C1C1C1 !important;
 }
 
 button::-moz-focus-inner,
@@ -1446,7 +1447,7 @@ input[type="search"] {
   margin-top: 0;
   margin-left: 10px;
 }
-input[type="radio"][disabled],
+input[type="radio"][disabled] ,
 input[type="checkbox"][disabled],
 input[type="radio"].disabled,
 input[type="checkbox"].disabled,
@@ -7906,3 +7907,10 @@ div.text-container {
   font-family: msuighur;
   src:url(../fonts/msuighur.ttf);
 }
+/*
+.ui-state-disabled{
+  color: #FF0000 !important;
+}*/
+
+.ui-datepicker td.ui-state-disabled>span{color: #CECCCC !important;}
+.ui-datepicker td.ui-state-disabled{opacity:100;}
