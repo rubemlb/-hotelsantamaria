@@ -7918,11 +7918,11 @@ div.text-container {
 }s
 .btn.btn-transparent a:hover{
   background: transparent;
-  color: orange !important;
+  color: #FA7921!important;
 }
 .btn.btn-transparent:hover a{
   background: transparent;
-  color: orange !important;
+  color: #FA7921!important;
 }
 
 
