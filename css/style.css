@@ -4643,7 +4643,7 @@ hr {
 }
 .btn.btn-transparent-white {
   background: transparent;
-  color: #fff;
+  color: #fff !important;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .btn.btn-transparent-white:hover {
@@ -7911,6 +7911,20 @@ div.text-container {
 .ui-state-disabled{
   color: #FF0000 !important;
 }*/
+
+.btn.btn-transparent a{
+  background: transparent;
+  color: #fff !important;
+}
+.btn.btn-transparent a:hover{
+  background: transparent;
+  color: orange !important;
+}
+.btn.btn-transparent:hover a{
+  background: transparent;
+  color: orange !important;
+}
+
 
 .ui-datepicker td.ui-state-disabled>span{color: #CECCCC !important;}
 .ui-datepicker td.ui-state-disabled{opacity:100;}

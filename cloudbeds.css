@@ -1,0 +1,32 @@
+<style>
+
+	.confirm {
+			display: none !important;
+	}
+
+	/* ----- santa maria ------ */
+
+	/*check availiability*/
+	.btn-warning {
+    color: #fff;
+    background-color: #f34719 !important;
+    border-color: #f34719 !important;
+	}
+	
+	/* booking now */
+	.green.btn {
+    color: #fff;
+    background-color: #FA7921 !important;
+	}
+
+	/* choose room */
+	.page-breadcrumb li.active a {
+    background: #570c20 !important;
+	}
+
+	/* ponta seta */
+	.page-breadcrumb li.active a:after {
+    border-left: 30px solid #570c20 !important;
+	}
+
+</style>
